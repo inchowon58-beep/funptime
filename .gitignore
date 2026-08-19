@@ -8,6 +8,8 @@ out
 *.tsbuildinfo
 .vercel
 tools/webdoc/__pycache__/
+tools/webdoc/**/__pycache__/
+*.pyc
 tools/webdoc/output/
 tools/webdoc/settings.json
 tools/webdoc/queue_state.json
