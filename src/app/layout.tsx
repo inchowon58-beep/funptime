@@ -72,6 +72,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="ko">
       <head>
+        <meta
+          name="naver-site-verification"
+          content="50323c9e6b08b108c5f780596873f92731d1deb1"
+        />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link rel="preconnect" href="https://image.cattery.co.kr" />
         <link rel="preconnect" href="https://cdn.sanity.io" />
