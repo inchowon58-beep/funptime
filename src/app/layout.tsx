@@ -50,10 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
       googleBot: { index: true, follow: true, "max-image-preview": "large" },
     },
     icons: {
-      icon: [
-        { url: "/favicon.png", type: "image/png" },
-        { url: "/favicon.svg", type: "image/svg+xml" },
-      ],
+      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     other: {
@@ -79,9 +76,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           name="naver-site-verification"
           content="50323c9e6b08b108c5f780596873f92731d1deb1"
         />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link rel="preconnect" href="https://image.cattery.co.kr" />
         <link rel="preconnect" href="https://cdn.sanity.io" />
