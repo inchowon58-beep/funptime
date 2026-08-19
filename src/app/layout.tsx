@@ -75,6 +75,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="ko">
       <head>
+        <meta charSet="utf-8" />
         <meta
           name="naver-site-verification"
           content="50323c9e6b08b108c5f780596873f92731d1deb1"
