@@ -287,9 +287,6 @@ export async function readIndex(): Promise<SeoIndex> {
 
 export async function writeIndex(index: SeoIndex): Promise<void> {
   const content = JSON.stringify(index, null, 2);
-  if (isVercelRuntime() && !resolveBlobToken()) {
-    throw new Error("BLOB_READ_WRITE_TOKEN이 설정되어 있지 않습니다. Vercel 환경변수 확인이 필요합니다.");
-  }
   if (isVercelRuntime() || resolveBlobToken()) {
     try {
       await writeBlobText(`${BLOB_PREFIX}/index.json`, content);
@@ -424,9 +421,6 @@ export async function savePage(page: SeoPage): Promise<void> {
   const pagePathname = blobPagePathname(page.slug);
 
   if (isVercelRuntime()) {
-    if (!resolveBlobToken()) {
-      throw new Error("BLOB_READ_WRITE_TOKEN이 설정되어 있지 않습니다. Vercel 환경변수 확인이 필요합니다.");
-    }
     try {
       await writeBlobText(pagePathname, content);
     } catch (e) {
