@@ -187,7 +187,7 @@ export default function AdminClient() {
     });
     if (!res.ok) {
       const data = await res.json().catch(() => ({}));
-      setLoginError(data.error || "로그인 실패");
+      setLoginError(data.error || "濡쒓렇???ㅽ뙣");
       return;
     }
     setAuthed(true);
@@ -214,11 +214,11 @@ export default function AdminClient() {
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "발행 실패");
-      setMessage(`발행 완료: ${data.path}`);
+      if (!res.ok) throw new Error(data.error || "諛쒗뻾 ?ㅽ뙣");
+      setMessage(`諛쒗뻾 ?꾨즺: ${data.path}`);
       await loadPages(1);
     } catch (err) {
-      setMessage(err instanceof Error ? err.message : "발행 실패");
+      setMessage(err instanceof Error ? err.message : "諛쒗뻾 ?ㅽ뙣");
     } finally {
       setPublishing(false);
     }
@@ -249,7 +249,7 @@ export default function AdminClient() {
 
   async function deleteSelectedOrders() {
     if (!selectedOrderIds.length) return;
-    if (!confirm(`선택한 문의 ${selectedOrderIds.length}개를 삭제하시겠습니까?`)) return;
+    if (!confirm(`?좏깮??臾몄쓽 ${selectedOrderIds.length}嫄댁쓣 ??젣?좉퉴??`)) return;
     setDeletingOrders(true);
     try {
       const res = await fetch("/api/admin/orders", {
@@ -871,17 +871,17 @@ export default function AdminClient() {
             onSubmit={onPublish}
             className="mt-8 rounded-2xl border border-[var(--line)] bg-white p-6"
           >
-            <h2 className="text-2xl font-extrabold text-[var(--navy)]">SEO 문서 발행</h2>
+            <h2 className="text-2xl font-extrabold text-[var(--navy)]">SEO 1嫄?諛쒗뻾</h2>
             <p className="mt-1 text-sm text-[var(--muted)]">
-              키워드를 입력하고, 템플릿 또는 Gemini 방식으로 SEO 상세페이지를 발행합니다.
+              ???諛쒗뻾? tools/webdoc ?밸Ц??諛쒗뻾湲곕? ?ъ슜?섏꽭??
             </p>
             <label className="mt-4 block text-sm font-semibold">
-              키워드
+              ?ㅼ썙??
               <input
                 className="mt-1 w-full rounded-xl border border-[var(--line)] bg-white px-3 py-2"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
-                placeholder="예: 분당 강아지장례식장"
+                placeholder="?? 媛뺤븘吏?λ??앹옣"
                 required
               />
             </label>
@@ -892,7 +892,7 @@ export default function AdminClient() {
                   checked={mode === "template"}
                   onChange={() => setMode("template")}
                 />
-                템플릿 방식 (API 없음)
+                湲곕낯 ?묒떇 (API ?놁쓬)
               </label>
               <label className="flex items-center gap-2">
                 <input
@@ -925,9 +925,9 @@ export default function AdminClient() {
           <div className="mt-10">
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
-                <h2 className="text-2xl font-extrabold text-[var(--navy)]">발행 가이드</h2>
+                <h2 className="text-2xl font-extrabold text-[var(--navy)]">諛쒗뻾???섏씠吏</h2>
                 <p className="mt-1 text-sm text-[var(--muted)]">
-                  목록에는 최근 100개만 노출되고, 나머지는 검색 유입과 직접 URL 접근을 위해 유지됩니다.
+                  湲곕낯? 理쒓렐 100嫄대쭔 蹂댁씠硫? 寃?됯낵 ?꾩껜 蹂닿린 ?꾪솚??媛?ν빀?덈떎.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
